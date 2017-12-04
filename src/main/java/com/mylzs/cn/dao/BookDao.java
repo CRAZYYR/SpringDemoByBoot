@@ -13,7 +13,7 @@ import java.util.List;
  */
 public interface BookDao extends JpaRepository<Book,Integer> ,JpaSpecificationExecutor<Book>{
     @Query("select b from Book b where b.name like %?1% ")
-        public List<Book> findByNameLike ( String name);
+    public List<Book> findByNameLike ( String name);
     @Query(value = "select * from t_book order by RAND() LIMIT ?1",nativeQuery = true)
     public List<Book> randomList ( Integer n);
 }
